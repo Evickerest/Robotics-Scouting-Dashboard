@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
     <title>Document</title>
 </head>
 <body>
@@ -59,27 +60,43 @@
             </div>
         </div>
     </div>
-    <div class="middle-container">
-        <div class="team-info">
-            <div id="team-name">TEAM</div>
+    <div class="data-container">
+        <div class="team-info-container">
+            <p id="team-name-banner">R.O.B.O.T.I.C.S.</p>
         </div>
-        <div class="average-stats">
-            <h1>Average Statistics</h1>
-            <div>average score:</div>
-            <p id="average-score">0</p>
+        <div class="tabs-container">
+            <div data-target=".average-stats-tab" class="tab tab-active">Average Stats</div>
+            <div data-target=".second" class="tab">Team Comparision</div>
         </div>
-    </div>
-    <div class="left-container">
-        <h1>Worst Performance</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium aliquam amet omnis. Magnam sequi delectus deleniti eligendi adipisci iusto repellendus architecto beatae dolores ratione ut provident asperiores, libero odit cum quidem explicabo magni repudiandae fugiat velit eum non? Autem odit suscipit reprehenderit repellendus, eum at. Vero voluptatem blanditiis quis.
-    </div>
-    <div class="right-container">
-        <h1>Best Performance</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium aliquam amet omnis. Magnam sequi delectus deleniti eligendi adipisci iusto repellendus architecto beatae dolores ratione ut provident asperiores, libero odit cum quidem explicabo magni repudiandae fugiat velit eum non? Autem odit suscipit reprehenderit repellendus, eum at. Vero voluptatem blanditiis quis.
 
-    </div>
-        
-    
+        <div class="average-stats-tab tab-content tab-content-active">
+            <div class="average-stats-container">
+                <h1>Average Stats:</h1>
+                <div class="star-ratings-graph-container">
+                   <div class="star-ratings-graph"></div>
+                </div>
+                <div class="primary-driving-graph-container">
+                    <div class="primary-driving-graph"></div>
+                </div>
+                <div class="secondary-driving-graph-container">
+                    <div class="secondary-driving-graph"></div>
+                </div>
+                <div class="hits-graph-container">
+                    <div class="hits-graph"></div>
+                </div>
+                <p id="a">Average Hit Percentage: 50%</p>
+                <button onclick="update()">press me</button>
+            </div>
+        </div>
+
+        <div class="second tab-content">
+            <div class="performance-container">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, nam? Omnis minus, eligendi beatae velit ullam voluptate, iure tempore, eius saepe eaque veritatis dignissimos necessitatibus? Iste iusto odio exercitationem illo illum tempore nihil, rerum, velit dolores nulla eaque dolorem aliquid ea autem. Eum nisi neque animi ad laboriosam vitae deserunt dolor dolorem, accusantium consequatur beatae reprehenderit totam, eaque deleniti iste vero ut facilis laudantium natus error eos? Iste reiciendis facere sapiente non, corporis fugit aut sit, aliquid, eum nulla delectus! Quisquam laboriosam voluptas odio non doloremque, nostrum eius placeat vel, recusandae modi eveniet! Quos aut ad suscipit libero minus autem?
+            </div>
+            <div class="team-relationship-container">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, nam? Omnis minus, eligendi beatae velit ullam voluptate, iure tempore, eius saepe eaque veritatis dignissimos necessitatibus? Iste iusto odio exercitationem illo illum tempore nihil, rerum, velit dolores nulla eaque dolorem aliquid ea autem. Eum nisi neque animi ad laboriosam vitae deserunt dolor dolorem, accusantium consequatur beatae reprehenderit totam, eaque deleniti iste vero ut facilis laudantium natus error eos? Iste reiciendis facere sapiente non, corporis fugit aut sit, aliquid, eum nulla delectus! Quisquam laboriosam voluptas odio non doloremque, nostrum eius placeat vel, recusandae modi eveniet! Quos aut ad suscipit libero minus autem?
+            </div>
+        </div>
     </div>
 </body>
 </html>
