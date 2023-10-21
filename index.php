@@ -59,8 +59,15 @@
                 </ul>
             </div>
         </div>
+        
     </div>
     <div class="data-container">
+        <div class="small-search-bar">
+            <div class="wrapper">
+                <input id="team-search-input" type="number">
+                <button id="search-button">Enter</button>
+            </div>
+        </div>
         <div class="team-info-container">
             <p id="team-name-banner">R.O.B.O.T.I.C.S.</p>
         </div>
@@ -70,33 +77,77 @@
         </div>
 
         <div class="average-stats-tab tab-content tab-content-active">
+            <div class="no-teams-found">No Data </div>
             <div class="average-stats-container">
                 <h1>Average Stats:</h1>
-                <div class="star-ratings-graph-container">
-                   <div class="star-ratings-graph"></div>
-                </div>
-                <div class="primary-driving-graph-container">
-                    <div class="primary-driving-graph"></div>
-                </div>
-                <div class="secondary-driving-graph-container">
-                    <div class="secondary-driving-graph"></div>
-                </div>
                 <div class="hits-graph-container">
-                    <div class="hits-graph"></div>
+                    <div class="hits-graph graph"></div>
+                    <div id="a" class="phrase">Average Hit Percentage: 50%</div>
+                    <div id="e" class="phrase">Total Scores: 100</div>
+                    (Scored in a single match)
+                    <div id="f" class="phrase">Average Scores: 10</div>
+                    <div id="g" class="phrase">Highest Score: 100</div>
+                    <div id="h" class="phrase">Lowest Score: 10</div>
                 </div>
-                <p id="a">Average Hit Percentage: 50%</p>
-                <button onclick="update()">press me</button>
+                <br><br>
+                <hr class="divider">
+                <div class="star-ratings-graph-container">
+                   <div class="star-ratings-graph graph"></div>
+                </div>
+                <br><br>
+                <hr class="divider">
+                <div class="primary-driving-graph-container">
+                    <div class="primary-driving-graph graph"></div>
+                    <div id="b" class="phrase">Average Mobility: 100%</div>
+                </div>
+                <br><br>
+                <hr class="divider">
+                <div class="endgame-Qual-driving-graph-container">
+                    <div class="endgame-Qual-driving-graph graph"></div>
+                </div>
+                <br><br>
+                <hr class="divider">
+                <div class="comments-container">
+                    <div class="phrase">Comments:</div>
+                    <div class="comment-holder">
+
+                    </div>
+                </div>
+                <br><br>
+                <hr class="divider">
+                <div id="c" class="phrase">Sample Size: 4</div>
+                <div id="d">From: </div>
             </div>
         </div>
 
         <div class="second tab-content">
-            <div class="performance-container">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, nam? Omnis minus, eligendi beatae velit ullam voluptate, iure tempore, eius saepe eaque veritatis dignissimos necessitatibus? Iste iusto odio exercitationem illo illum tempore nihil, rerum, velit dolores nulla eaque dolorem aliquid ea autem. Eum nisi neque animi ad laboriosam vitae deserunt dolor dolorem, accusantium consequatur beatae reprehenderit totam, eaque deleniti iste vero ut facilis laudantium natus error eos? Iste reiciendis facere sapiente non, corporis fugit aut sit, aliquid, eum nulla delectus! Quisquam laboriosam voluptas odio non doloremque, nostrum eius placeat vel, recusandae modi eveniet! Quos aut ad suscipit libero minus autem?
-            </div>
-            <div class="team-relationship-container">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, nam? Omnis minus, eligendi beatae velit ullam voluptate, iure tempore, eius saepe eaque veritatis dignissimos necessitatibus? Iste iusto odio exercitationem illo illum tempore nihil, rerum, velit dolores nulla eaque dolorem aliquid ea autem. Eum nisi neque animi ad laboriosam vitae deserunt dolor dolorem, accusantium consequatur beatae reprehenderit totam, eaque deleniti iste vero ut facilis laudantium natus error eos? Iste reiciendis facere sapiente non, corporis fugit aut sit, aliquid, eum nulla delectus! Quisquam laboriosam voluptas odio non doloremque, nostrum eius placeat vel, recusandae modi eveniet! Quos aut ad suscipit libero minus autem?
-            </div>
+            <p class="phrase">Current Ranking (based on total scored)</p>
+            <p class="phrase">***This is completely based on our own scouting***</p>
+           <ul class="ranking-container">
+                <li class="rank">858a: 10 points</li>
+                <li class="rank">3357a: 9 points</li>
+                <li class="rank">2771a: 5 points</li>
+                <li class="rank">1a: 1points</li>
+            </ul> 
         </div>
     </div>
+
+    <?php
+        $conn = new mysqli("###", "###","###", "###");
+        
+        $sth = mysqli_query($conn, "SELECT * FROM WMRI");
+            $rows = array();
+            while($r = mysqli_fetch_assoc($sth)) {
+                $rows[] = $r;
+            }
+        $json_array = json_encode($rows);
+
+        $conn->close();
+    ?>
+
+    <script>
+    arrayObjects = <?php echo $json_array; ?>
+    </script>
+
 </body>
 </html>
